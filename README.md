@@ -1,13 +1,16 @@
 # Project Title
-
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+Loan Qualfier Application : Instaneously matches avialable loan programs to Client needs to allow our loand analysts to process and fund loans quickly.
 
 ---
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
-
+This application has been implemented using interpetive language Python. Python has a powerful set of pre built libraries which allows rapid development of financial applications. The Loan Qualifier Application uses the following available python packages
+    CSV : This has all the functions to read, write and manipulate Comma Seprated files.
+    Fire : Powerful library of functions for file i/o
+    Questionary : allows interactive communication using Commant Line Interface with the user of the application
+The development was done using the VS Code IDE.
+    
 ---
 
 ## Installation Guide
