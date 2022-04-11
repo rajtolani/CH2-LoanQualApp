@@ -15,9 +15,13 @@ def save_csv(csvpath, csvdata):
     Returns:
 
     """
+    # open the file using the cvspath object in write mode
     with open(csvpath, 'w', newline='') as csvfile:
+        #create csvwriter object
         csvwriter=csv.writer(csvfile)
+        # loop through the list csvdata
         for this_loan in csvdata:
+            # for each loan found write a row in the csv file
             csvwriter.writerow(this_loan)
     return
 
