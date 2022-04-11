@@ -13,6 +13,7 @@ from pathlib import Path
 import csv
 
 from qualifier.utils.fileio import load_csv
+from qualifier.utils.fileio import save_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -109,15 +110,27 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    csvpath = questionary.text("Enter a file path save list of qualifying loans (.csv):").ask()
-    csvpath = Path(csvpath)
-   # if not csvpath.exists():
-    #    sys.exit(f"Oops! Could not write to this file {csvpath}")
-    with open(csvpath, 'w', newline='') as csvfile:
-        csvwriter=csv.writer(csvfile)
-        for this_loan in qualifying_loans:
-            csvwriter.writerow(this_loan)
+    """ Check length of qualifying loans. If empty print message to info user there are no qualifying results and return
+        If list not empty Query user if results need to be save in a file
+            if yes
+                Ask for path (location and name) of output file
+                Call function csv_save with path object for specified file and qualifying_loans table (list of lists)
+            if no
+                do nothing, return
+    """
+    # Check length of qualifying loans
+    if len(qualifying_loans) >0:
+        # if not empty ask user if the data needs to be saved in a file
+        if questionary.confirm("Qualifying Loans Found, Do you want to create file with list of Qualifying banks", True).ask():
+            # if Yes ask for path of the file for output to be written
+            csvpath = questionary.text("Enter a file path save list of qualifying loans (.csv):").ask()
+            # Create path object for the provided path
+            csvpath = Path(csvpath)
+            # call function save_csv with csvpath and Qualfying loans as arguments
+            save_csv(csvpath,qualifying_loans)
+    # if qualifying_loans list is empty, inform user and return
+    else:
+        print("Sorry, There are no loans which quality for this applicant")
     return
 
 def run():
