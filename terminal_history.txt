@@ -1,0 +1,39 @@
+    1  cd c:/
+    2  cd Raj*
+    3  cd raj_*/Chal*/Star*/loan*
+    4  conda activate dev
+    5  pip install fire
+    6  pip install questionary
+    7  pip freeze
+    8  git config --global user.name Raj Tolani
+    9  git config --global user.email admin@tolanicollection.com
+   10  git config --list
+   11  git clone https://github.com/rajtolani/CH2-LoanQualApp.git
+   12  ls
+   13  cd CH*
+   14  git status
+   15  git add .
+   16  git commit -m "This version has the original starter files provided but the Fintech BootCamp Staff"
+   17  git status
+   18  git push
+   19  git add app.py
+   20  git add ./data/list_qualifying_loans.csv
+   21  git status
+   22  git add README.md
+   23  git status
+   24  git commit -m "Intermediate version with logic for writing list of qualified loans, output file. Also have started the Readme file"
+   25  git push
+   26  git status
+   27  git add appy.py qualifier/utils/fileio.py
+   28  git add app.py qualifier/utils/fileio.py
+   29  git status
+   30  git commit -m "Defined function save_csv in utils/fileio.py and added CLI user interface to support user story and acceptance criterion"
+   31  git push
+   32  git status
+   33  pwd
+   34  python app.py
+   35  git status
+   36  git add README.md qualifier/utils/fileio.py
+   37  git status
+   38  git commit -m "Final Submission for the challenge. The code is modular. The Readme file has been updated. All the code has been commented"
+   39  history 50 > terminal_history.txt
